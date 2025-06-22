@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornell Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']]
+            }
+        };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cornell-cue {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-right: 3px solid #3b82f6;
+        }
+        .cornell-notes {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .cornell-table {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-sans">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="px-8 py-10 sm:px-12 sm:py-12">
+                <div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Active Money Management</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Mutual Fund Design &amp; Performance Issues</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Mutual Fund Structure</strong> | <strong>Open-End Design Creates Performance Paradox</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Open-end funds</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mutual funds designed as "open-end" - new money flows in when investors buy shares</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Fund flows</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Good performance attracts more investor money into the fund</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Performance impact</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Larger fund size makes it harder to maintain same alpha performance<br/>• Bigger trades likely result in worse execution prices (fills)</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Alpha Definition</strong> | <strong>CAPM Framework for Performance Measurement</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha (α)</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Alpha = constant term in CAPM regression equation</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">CAPM equation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> <strong>Formula:</strong> $r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Performance indicator</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Positive alpha = outperforming (excess return above risk-adjusted expectation)<br/>• Negative alpha = underperforming<br/>• Zero alpha = performance aligns with risk (CAPM expectation)</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>CAPM Components</strong> | <strong>Key Variables in Capital Asset Pricing Model</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Returns</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_i$ = Return on investment (stock, mutual fund, etc.)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Risk-free rate</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_F$ = Risk-free rate (baseline return)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Market return</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_M$ = Return on the market</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Beta</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $\beta_i$ = Investment's beta × expected market return</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Excess returns</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $E[r_i] - r_F$ = Expected excess return of investment<br/>• Market Risk Premium = expected market return above risk-free rate</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Performance Paradox</strong> | <strong>Success Becomes Self-Limiting</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Fund performance cycle</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Fund 1 underperforms, Fund 2 outperforms → investors move to Fund 2</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Size vs. performance</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Fund 2's success attracts more capital → larger size hurts future performance</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha sustainability</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Higher alpha initially, but harder to maintain with increased assets under management</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Summary</h2>
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-lg p-6 mb-8 shadow-sm"><p class="text-slate-700 leading-relaxed text-base">The open-end structure of mutual funds creates a fundamental tension: successful performance attracts capital inflows, but larger fund size typically diminishes the manager's ability to generate the same level of alpha. CAPM provides the framework for measuring this alpha - the risk-adjusted excess return that indicates true managerial skill versus market performance.</p></div>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Mathematical Foundation: Understanding the CAPM Equation</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">The Main CAPM Equation Explained</h2>
+<p class="text-slate-700 leading-relaxed mb-4">$r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Left Side of the Equation:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{i,t}$ = The actual return of investment $i$ during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much money did my investment make this month?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If you invested $100 and now have $105, your return is 5%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{F,t}$ = The risk-free rate during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "What could I earn with zero risk?" (like a government bond)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If treasury bills pay 2%, that's your risk-free rate</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{i,t} - r_{F,t}$ = <strong>Excess return</strong> of your investment</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return did I get for taking risk?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: 5% investment return - 2% risk-free rate = 3% excess return</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Right Side Components:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\alpha_i$ = <strong>Alpha</strong> - the "magic" of the fund manager</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return does this manager create through skill?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Positive alpha = manager adds value beyond what risk alone would predict</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Zero alpha = manager performs exactly as expected for the risk taken</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Negative alpha = manager destroys value</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta_i$ = <strong>Beta</strong> - sensitivity to market movements</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much does this investment move when the market moves?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta = 1$: moves exactly with the market</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta > 1$: more volatile than market (amplifies market moves)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta < 1$: less volatile than market (dampened market moves)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If market goes up 10% and your stock goes up 15%, beta might be 1.5</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{M,t}$ = Market return during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How did the overall stock market perform?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Usually measured by indices like S&amp;P 500</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If S&amp;P 500 gained 8% this year, that's your market return</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $(r_{M,t} - r_{F,t})$ = <strong>Market risk premium</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return does the market provide vs. safe investments?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: 8% market return - 2% risk-free rate = 6% market risk premium</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta_i(r_{M,t} - r_{F,t})$ = <strong>Expected excess return due to market risk</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "Given this investment's riskiness, how much extra return should I expect?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- This is what CAPM theory says you *should* earn for taking market risk</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\varepsilon_{i,t}$ = <strong>Error term</strong> (epsilon)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "Random stuff that happened that we can't predict"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Market noise, unexpected events, pure randomness</p>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">The Simplified CAPM Formula</h2>
+<p class="text-slate-700 leading-relaxed mb-4">$E[r_i] - r_F = \beta_i(E[r_M] - r_F)$</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>What this means in plain English:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">"The extra return you should expect from an investment equals its beta times the extra return you expect from the market."</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Symbol Breakdown:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $E[r_i]$ = Expected return of investment $i$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- The "E" stands for "Expected" - what we think will happen on average</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $E[r_M]$ = Expected return of the market</p>
+<p class="text-slate-700 leading-relaxed mb-4">- What we think the overall market will return on average</p>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Real-World Example</h2>
+<p class="text-slate-700 leading-relaxed mb-4">Let's say you're looking at a tech stock:</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Risk-free rate: 3%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected market return: 10%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Stock's beta: 1.2 (20% more volatile than market)</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Using CAPM:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">Expected stock return = 3% + 1.2 × (10% - 3%) = 3% + 8.4% = 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>If the stock actually returns 13%:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected return: 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Actual return: 13%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Alpha = 13% - 11.4% = 1.6% (positive alpha - good manager!)</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>If the stock actually returns 9%:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected return: 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Actual return: 9%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Alpha = 9% - 11.4% = -2.4% (negative alpha - poor performance)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
