@@ -84,17 +84,14 @@ class CornellNotesHTMLConverter:
         
     def preserve_latex_for_html(self, text: str) -> str:
         """
-        Preserve LaTeX mathematical expressions for MathJax rendering in HTML.
+        Preserve LaTeX mathematical expressions and process markdown formatting for HTML.
         
         Args:
-            text: Input text with LaTeX expressions
+            text: Input text with LaTeX expressions and markdown
             
         Returns:
-            Text with LaTeX preserved for MathJax
+            Text with LaTeX preserved and markdown converted to HTML
         """
-        # MathJax will handle LaTeX directly, so we just need to preserve it
-        # and escape HTML characters outside of math expressions
-        
         # Temporarily replace math expressions with placeholders
         math_expressions = []
         
@@ -112,8 +109,33 @@ class CornellNotesHTMLConverter:
         text = re.sub(r'\$\$([^$]+)\$\$', store_block_math, text)
         text = re.sub(r'\$([^$]+)\$', store_inline_math, text)
         
-        # Escape HTML characters in non-math text
+        # Process markdown formatting (before HTML escaping)
+        # Bold text: **text** -> <strong>text</strong>
+        text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
+        
+        # Italic text: *text* -> <em>text</em> (only single asterisks)
+        # Skip this for now to avoid regex complexity - focus on bold formatting first
+        # text = re.sub(r'\*([^*\$]+)\*', r'<em>\1</em>', text)
+        
+        # Code text: `text` -> <code>text</code>
+        text = re.sub(r'`([^`]+)`', r'<code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">\1</code>', text)
+        
+        # Escape HTML characters but preserve our markdown HTML tags
+        # First store our HTML tags
+        html_tags = []
+        def store_html_tag(match):
+            html_tags.append(match.group(0))
+            return f"__HTML_TAG_{len(html_tags) - 1}__"
+        
+        # Store HTML tags we created
+        text = re.sub(r'</?(?:strong|em|code|br|span)[^>]*>', store_html_tag, text)
+        
+        # Now escape remaining < and > 
         text = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        
+        # Restore our HTML tags
+        for i, html_tag in enumerate(html_tags):
+            text = text.replace(f"__HTML_TAG_{i}__", html_tag)
         
         # Restore math expressions
         for i, math_expr in enumerate(math_expressions):
@@ -244,6 +266,38 @@ class CornellNotesHTMLConverter:
                     pairs = self.parse_cornell_table('\n'.join(table_content))
                     if pairs:
                         self.create_cornell_table_html(pairs)
+                continue
+            
+            # Alternative Cornell format: lines starting with "- text |"
+            elif line.startswith('- ') and '|' in line:
+                # Collect all consecutive lines with this format
+                cornell_pairs = []
+                while i < len(lines) and lines[i].strip():
+                    current_line = lines[i].strip()
+                    if current_line.startswith('- ') and '|' in current_line:
+                        # Parse this line as cue | notes
+                        parts = current_line[2:].split('|', 1)  # Remove "- " and split
+                        if len(parts) == 2:
+                            cue = parts[0].strip()
+                            notes = parts[1].strip()
+                            cue = self.preserve_latex_for_html(cue)
+                            notes = self.preserve_latex_for_html(notes)
+                            cornell_pairs.append((cue, notes))
+                    elif current_line.startswith('|'):
+                        # Continuation line for previous notes
+                        if cornell_pairs:
+                            continuation = current_line[1:].strip()  # Remove "|"
+                            continuation = self.preserve_latex_for_html(continuation)
+                            # Append to last notes entry
+                            last_cue, last_notes = cornell_pairs[-1]
+                            cornell_pairs[-1] = (last_cue, last_notes + '<br/>' + continuation)
+                    else:
+                        break
+                    i += 1
+                
+                # Create table from collected pairs
+                if cornell_pairs:
+                    self.create_cornell_table_html(cornell_pairs)
                 continue
             
             # Regular paragraph
