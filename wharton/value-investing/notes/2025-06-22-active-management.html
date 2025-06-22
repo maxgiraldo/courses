@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornell Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']]
+            }
+        };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cornell-cue {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-right: 3px solid #3b82f6;
+        }
+        .cornell-notes {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .cornell-table {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-sans">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="px-8 py-10 sm:px-12 sm:py-12">
+                <div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Active Money Management</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Mutual Fund Design &amp; Performance Issues</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Mutual Fund Structure</strong> | <strong>Open-End Design Creates Performance Paradox</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Open-end funds</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mutual funds designed as "open-end" - new money flows in when investors buy shares</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Fund flows</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Good performance attracts more investor money into the fund</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Performance impact</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Larger fund size makes it harder to maintain same alpha performance<br/>• Bigger trades likely result in worse execution prices (fills)</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Alpha Definition</strong> | <strong>CAPM Framework for Performance Measurement</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha (α)</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Alpha = constant term in CAPM regression equation</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">CAPM equation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> <strong>Formula:</strong> $r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Performance indicator</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Positive alpha = outperforming (excess return above risk-adjusted expectation)<br/>• Negative alpha = underperforming<br/>• Zero alpha = performance aligns with risk (CAPM expectation)</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>CAPM Components</strong> | <strong>Key Variables in Capital Asset Pricing Model</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Returns</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_i$ = Return on investment (stock, mutual fund, etc.)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Risk-free rate</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_F$ = Risk-free rate (baseline return)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Market return</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_M$ = Return on the market</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Beta</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $\beta_i$ = Investment's beta × expected market return</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Excess returns</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $E[r_i] - r_F$ = Expected excess return of investment<br/>• Market Risk Premium = expected market return above risk-free rate</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Performance Paradox</strong> | <strong>Success Becomes Self-Limiting</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Fund performance cycle</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Fund 1 underperforms, Fund 2 outperforms → investors move to Fund 2</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Size vs. performance</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Fund 2's success attracts more capital → larger size hurts future performance</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha sustainability</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Higher alpha initially, but harder to maintain with increased assets under management</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Summary</h2>
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-r-lg p-6 mb-8 shadow-sm"><p class="text-slate-700 leading-relaxed text-base">The open-end structure of mutual funds creates a fundamental tension: successful performance attracts capital inflows, but larger fund size typically diminishes the manager's ability to generate the same level of alpha. CAPM provides the framework for measuring this alpha - the risk-adjusted excess return that indicates true managerial skill versus market performance.</p></div>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Mathematical Foundation: Understanding the CAPM Equation</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">The Main CAPM Equation Explained</h2>
+<p class="text-slate-700 leading-relaxed mb-4">$r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Left Side of the Equation:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{i,t}$ = The actual return of investment $i$ during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much money did my investment make this month?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If you invested $100 and now have $105, your return is 5%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{F,t}$ = The risk-free rate during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "What could I earn with zero risk?" (like a government bond)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If treasury bills pay 2%, that's your risk-free rate</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{i,t} - r_{F,t}$ = <strong>Excess return</strong> of your investment</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return did I get for taking risk?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: 5% investment return - 2% risk-free rate = 3% excess return</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Right Side Components:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\alpha_i$ = <strong>Alpha</strong> - the "magic" of the fund manager</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return does this manager create through skill?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Positive alpha = manager adds value beyond what risk alone would predict</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Zero alpha = manager performs exactly as expected for the risk taken</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Negative alpha = manager destroys value</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta_i$ = <strong>Beta</strong> - sensitivity to market movements</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much does this investment move when the market moves?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta = 1$: moves exactly with the market</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta > 1$: more volatile than market (amplifies market moves)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta < 1$: less volatile than market (dampened market moves)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If market goes up 10% and your stock goes up 15%, beta might be 1.5</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $r_{M,t}$ = Market return during time period $t$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How did the overall stock market perform?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Usually measured by indices like S&amp;P 500</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: If S&amp;P 500 gained 8% this year, that's your market return</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $(r_{M,t} - r_{F,t})$ = <strong>Market risk premium</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "How much extra return does the market provide vs. safe investments?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Example: 8% market return - 2% risk-free rate = 6% market risk premium</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\beta_i(r_{M,t} - r_{F,t})$ = <strong>Expected excess return due to market risk</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "Given this investment's riskiness, how much extra return should I expect?"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- This is what CAPM theory says you *should* earn for taking market risk</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $\varepsilon_{i,t}$ = <strong>Error term</strong> (epsilon)</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Think: "Random stuff that happened that we can't predict"</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Market noise, unexpected events, pure randomness</p>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">The Simplified CAPM Formula</h2>
+<p class="text-slate-700 leading-relaxed mb-4">$E[r_i] - r_F = \beta_i(E[r_M] - r_F)$</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>What this means in plain English:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">"The extra return you should expect from an investment equals its beta times the extra return you expect from the market."</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Symbol Breakdown:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- $E[r_i]$ = Expected return of investment $i$</p>
+<p class="text-slate-700 leading-relaxed mb-4">- The "E" stands for "Expected" - what we think will happen on average</p>
+<p class="text-slate-700 leading-relaxed mb-4">- $E[r_M]$ = Expected return of the market</p>
+<p class="text-slate-700 leading-relaxed mb-4">- What we think the overall market will return on average</p>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Real-World Example</h2>
+<p class="text-slate-700 leading-relaxed mb-4">Let's say you're looking at a tech stock:</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Risk-free rate: 3%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected market return: 10%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Stock's beta: 1.2 (20% more volatile than market)</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Using CAPM:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">Expected stock return = 3% + 1.2 × (10% - 3%) = 3% + 8.4% = 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>If the stock actually returns 13%:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected return: 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Actual return: 13%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Alpha = 13% - 11.4% = 1.6% (positive alpha - good manager!)</p>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>If the stock actually returns 9%:</strong></p>
+<p class="text-slate-700 leading-relaxed mb-4">- Expected return: 11.4%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Actual return: 9%</p>
+<p class="text-slate-700 leading-relaxed mb-4">- Alpha = 9% - 11.4% = -2.4% (negative alpha - poor performance)</p>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Market Efficiency &amp; Expected Returns</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Market Efficiency Framework</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Market Efficiency Definition</strong> | <strong>Stock Prices Reflect All Available Information</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Efficiency concept</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Market efficiency = stock prices reflect all available information</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Trading implications</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> If price reflects all info, you cannot beat the market (whatever you know is already priced in)</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Information timing</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> When you learn something good/bad about a stock and go to trade, it's too late</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Expected vs. Needed Return</strong> | <strong>Framework for Evaluating Stock Value</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Apple example</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> AAPL trading at $200, need 10% return annually for risk</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Expected price calculation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Worth buying if expected price = $220 in one year (+10% of $200)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Statistical expectation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Probability-weighted average of all possible future prices</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Pricing evaluation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Overpriced if expected &lt; $220, Underpriced if expected > $220, Correctly priced if expected = $220</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Efficiency Implications</strong> | <strong>Why Market Efficiency Makes Trading Difficult</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Information processing</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Many individuals and institutions analyzing stocks deeply (especially large caps like AAPL)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Trading reality</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> If you think you have a fresh angle, consider what it would take for that not to be priced in</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Profitable trades</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Finding profitable trades is not impossible, just harder than it seems</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Research Pitfalls in Active Management</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Common Pitfalls When Evaluating Trading Strategies</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Data Mining (P-Hacking)</strong> | <strong>Searching for Predictive Relations in Databases</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Definition</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Data mining = searching for predictive relation in database</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Example strategy</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Every time stock X goes up, buy stock Y next day; when X goes down, sell Y</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">The problem</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Strategy tested on millions of stock pairs, this combination worked best</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Statistical illusion</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Probability of 1 in million seems impressive, but with 20 million tries, beating those odds becomes likely</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">P-value deception</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> P-value presented as 0.000001, but real probability much higher due to data mining</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Hold-Out Sample Solution</strong> | <strong>Protecting Against Data Mining</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Method</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Don't provide all data when looking for strategy</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Example implementation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Present 10 years of data starting 12 years ago, "hold out" last 2 years</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Testing process</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> When trader returns with strategy, apply it to hold-out sample to test effectiveness</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Strategy Lifespan Problem</strong> | <strong>Strategies Have Limited Effectiveness Over Time</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Historical example</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Small-caps outperformed large-caps in 1980s</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Documentation effect</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Strategy disappeared quickly after being documented</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Profitability decay</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Profitability of strategy likely to fade over time</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Transaction Costs Reality</strong> | <strong>Historical Prices Don't Reflect Actual Trading Costs</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Price uncertainty</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Don't know what actual trading prices would have been</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Small-cap example</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Stock closed $20 Thursday, $21 Friday ≠ guaranteed 5% return</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Trading reality</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Just because others traded at those prices doesn't mean you could have</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Buyer vs. seller driven</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Important to know if price was buyer or seller driven</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Peso Problem</strong> | <strong>Low-Probability Disaster Risk</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Historical context</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mexican Peso stable at $.08 for 20 years before sudden devaluation (late 1970s)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Popular strategy</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Convert dollars to pesos, earn higher interest, convert back</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">The risk</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Strategy bets against low-probability disaster (peso devaluation)</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Problem definition</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Trading strategy betting against rare disaster looks more valuable than it really is</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Index Fund Analysis</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Reasons for Index Fund Popularity</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Low Transaction Costs</strong> | <strong>Minimal Trading Activity Reduces Expenses</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Index fund trading</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Buys stocks when they enter index, sells when they leave</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Cost advantage</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Buying/selling index rather than individual stocks much cheaper</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>No Cost for Average Performance</strong> | <strong>Standard Performance at Minimal Expense</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">S&amp;P 500 index funds</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Gives value-weighted market return with practically no annual fees</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Value proposition</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Pay almost nothing, get average performance</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Cost comparison</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Average performance usually expensive, but free with indexing</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Mean Variance Efficiency</strong> | <strong>Optimal Risk-Return Profile</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Definition</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mean variance efficient = minimum risk for expected return</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">CAPM prediction</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Value-weighted market portfolio is mean-variance efficient</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Diversification benefit</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Well-diversified portfolio reduces risk</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Index Fund Considerations</strong> | <strong>Potential Drawbacks and Market Impact</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Universal indexing problem</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Not everyone can index (indiscriminate buying challenges market efficiency)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Apple example</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> If fundamental value $200 but indexing drives price to $300-400, creates inefficiency</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Index correlation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Stocks added to index move more with index than fundamental value</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Opportunity creation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Creates opportunities for traders who analyze fundamental value</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Jensen's Alpha Analysis</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">CAPM Application to Fund Performance</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Jensen's 1968 Study</strong> | <strong>CAPM Applied to Mutual Fund Performance Analysis</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha definition</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Alpha = constant term in CAPM regression equation</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Performance measurement</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Alpha interpretation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Positive α = outperforming (excess return above risk-adjusted expectation)<br/>• Zero α = performance aligns with risk (CAPM expectation)<br/>• Negative α = underperforming</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Jensen's Findings</strong> | <strong>Actively Managed Funds vs. Costs</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Main conclusion</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> On average, actively managed funds did not cover fees and trading costs</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Subsequent studies</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Findings typically replicated with some exceptions</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Investment implication</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Investors better off with low-fee index funds than actively-managed funds</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Fund Manager Ability Considerations</strong> | <strong>Two Important Points About Performance</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Thousands of funds</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Average performance can be negative even if subset is positive</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Carhart 1997 finding</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Top performers show positive alphas over time</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Fund design problem</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Open-end mutual fund structure hinders even good managers' ability to maintain positive alpha</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Hedge Funds</h2>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Regulatory Structure</strong> | <strong>Private Funds Avoiding 40 Act Regulation</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Regulation difference</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Private and less regulated than mutual funds</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">40 Act Fund regulation</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mutual funds regulated by "40 Act Fund" with disclosure requirements and restrictions</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Public vs. private</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> 40 Act Funds are public, hedge funds have choice by limiting investors</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Reporting requirement</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Anyone with &gt;$100M must report equity holdings via Form 13F quarterly</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Compensation Structure</strong> | <strong>Complex Fee Arrangements</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Management fee</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Usually 2% annually</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Incentive fee</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Usually 20% of profits</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Hurdle rate</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Minimum return threshold before incentive fees</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">High-water mark</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Must exceed previous peak value before incentive fees resume</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Vs. mutual funds</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Mutual funds have simple expense ratio structure</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Performance Research</strong> | <strong>Analysis Based on Voluntary Disclosures</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Public vs. private performance</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> 40 Act Fund performance is public, hedge fund performance public only if management wants</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Research limitations</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Hedge fund research relies on voluntary disclosures</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Average performance difficulty</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Hard to assess true average hedge fund performance</td>
+</tr>
+</table>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed mb-4"><strong>Equity Trading Characteristics</strong> | <strong>Cao, Chen, Goetzmann &amp; Liang (2018) Findings</strong></p>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Stock preferences</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Concentrate on smaller, lower-priced, growth, and younger stocks</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Recent performance bias</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Hold more stocks that recently performed very well</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Mispricing focus</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Concentrate on stocks with more potential to be mispriced</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Market efficiency impact</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Stocks tend to become more efficient once hedge funds are involved</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Financial crisis caveat</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Hedge funds quickly dumping stocks during crisis created significant inefficiency</td>
+</tr>
+</table>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
