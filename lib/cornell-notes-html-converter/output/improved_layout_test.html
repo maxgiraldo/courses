@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornell Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']]
+            }
+        };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Georgia', 'Times New Roman', 'serif'],
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cornell-cue {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-right: 3px solid #3b82f6;
+        }
+        .cornell-notes {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+        .cornell-table {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen font-sans">
+    <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="px-8 py-10 sm:px-12 sm:py-12">
+                <div class="text-center mb-12"><h1 class="text-4xl font-bold text-slate-800 mb-2">Active Money Management Notes</h1><div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div></div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">CAPM Framework</h2>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">What is alpha?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $\alpha_i$ = manager skill beyond market risk<br/><span class="inline-block w-4">•</span>Measures excess return after adjusting for systematic risk<br/><span class="inline-block w-4">•</span>Positive alpha indicates outperformance</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">CAPM equation?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $r_{i,t} - r_{F,t} = \alpha_i + \beta_i(r_{M,t} - r_{F,t}) + \varepsilon_{i,t}$<br/><span class="inline-block w-4">•</span>$r_i$ = return on asset i, $r_F$ = risk-free rate<br/><span class="inline-block w-4">•</span>$r_M$ = market return, $\beta_i$ = systematic risk</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">What is beta?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $\beta_i$ = systematic risk measure<br/><span class="inline-block w-4">•</span>$\beta_i = \frac{Cov(r_i, r_M)}{Var(r_M)}$<br/><span class="inline-block w-4">•</span>Beta &gt; 1: more volatile than market</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Risk decomposition?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Total risk = Systematic risk + Unsystematic risk<br/><span class="inline-block w-4">•</span>$\sigma_i^2 = \beta_i^2 \sigma_M^2 + \sigma_{\varepsilon_i}^2$<br/><span class="inline-block w-4">•</span>Only systematic risk is compensated in equilibrium</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Portfolio Performance Evaluation</h2>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Sharpe Ratio?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $SR = \frac{r_p - r_f}{\sigma_p}$<br/><span class="inline-block w-4">•</span>Measures excess return per unit of total risk<br/><span class="inline-block w-4">•</span>Higher ratio indicates better risk-adjusted performance</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Treynor Ratio?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $TR = \frac{r_p - r_f}{\beta_p}$<br/><span class="inline-block w-4">•</span>Measures excess return per unit of systematic risk<br/><span class="inline-block w-4">•</span>Useful for well-diversified portfolios</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Information Ratio?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $IR = \frac{\alpha_p}{\sigma(\varepsilon_p)}$<br/><span class="inline-block w-4">•</span>Measures active return per unit of active risk<br/><span class="inline-block w-4">•</span>Alpha divided by tracking error</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Jensen's Alpha?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> $\alpha_J = r_p - [r_f + \beta_p(r_m - r_f)]$<br/><span class="inline-block w-4">•</span>CAPM-based performance measure<br/><span class="inline-block w-4">•</span>Positive alpha indicates outperformance</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Market Efficiency &amp; Anomalies</h2>
+<div class="mb-8">
+<div class="cornell-table rounded-lg overflow-hidden border border-slate-300">
+<table class="w-full">
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">EMH Forms?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> **Weak**: Prices reflect historical information<br/><span class="inline-block w-4">•</span>**Semi-strong**: Prices reflect all public information<br/><span class="inline-block w-4">•</span>**Strong**: Prices reflect all information (public + private)</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Size Effect?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Small-cap stocks tend to outperform large-cap<br/><span class="inline-block w-4">•</span>$r_{small} - r_{large} > 0$ historically<br/><span class="inline-block w-4">•</span>May be risk premium for illiquidity</td>
+</tr>
+<tr class="border-b border-slate-200">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Value Premium?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> High book-to-market stocks outperform growth stocks<br/><span class="inline-block w-4">•</span>$r_{HML} = r_{high B/M} - r_{low B/M} > 0$<br/><span class="inline-block w-4">•</span>Captured in Fama-French 3-factor model</td>
+</tr>
+<tr class="">
+<td class="cornell-cue w-1/3 px-6 py-4 font-semibold text-slate-700 text-sm leading-relaxed align-top">Momentum Effect?</td>
+<td class="cornell-notes w-2/3 px-6 py-4 text-slate-800 text-sm leading-relaxed align-top"><span class="inline-block w-4">•</span> Past winners tend to continue winning (3-12 months)<br/><span class="inline-block w-4">•</span>$r_{WML} = r_{winners} - r_{losers} > 0$<br/><span class="inline-block w-4">•</span>Reverses over longer horizons (3-5 years)</td>
+</tr>
+</table>
+</div>
+</div>
+<h2 class="text-2xl font-bold text-slate-700 mt-12 mb-6 pb-2 border-b-2 border-red-200">Summary</h2>
+<p class="text-slate-700 leading-relaxed mb-4">The CAPM framework provides a foundation for understanding risk-return relationships in financial markets. Alpha ($\alpha$) represents manager skill, while beta ($\beta$) captures systematic risk exposure. Performance evaluation metrics like Sharpe ratio, Treynor ratio, and Information ratio help assess risk-adjusted returns. Market anomalies such as size effect, value premium, and momentum challenge the strong form of market efficiency and suggest opportunities for active management strategies.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
